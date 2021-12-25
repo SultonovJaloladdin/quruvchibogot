@@ -13,37 +13,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
+Route::get('/', 'HomeController@index')->name('home.index');
+Route::get('/about', 'AboutController@index')->name('about.index');
 
-Route::get('/about', function () {
-    return view('about');
-});
+Route::get('/blog', 'BlogController@index')->name('blog.index');
+Route::get('/blog/{slug}', 'BlogController@show')->name('blog.show');
 
-Route::get('/blog', function () {
-    return view('blog');
-});
-
-Route::get('/contact', function () {
-    return view('contact');
-});
-
-Route::get('/projects', function () {
-    return view('projects');
-});
-
-Route::get('/service', function () {
-    return view('service');
-});
-
-Route::get('/team', function () {
-    return view('team');
-});
-
-Route::get('/single', function () {
-    return view('single');
-});
+Route::get('/contact', 'ContactController@index')->name('contact.index');
+Route::get('/projects', 'ProjectsController@index')->name('projects.index');
+Route::get('/service', 'ServiceController@index')->name('service.index');
+Route::get('/team', 'TeamController@index')->name('team.index');
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
