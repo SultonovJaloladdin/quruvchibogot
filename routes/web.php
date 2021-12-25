@@ -17,6 +17,33 @@ Route::get('/', function () {
     return view('index');
 });
 
+Route::get('/about', function () {
+    return view('about');
+});
+
+Route::get('/blog', function () {
+    return view('blog');
+});
+
+Route::get('/contact', function () {
+    return view('contact');
+});
+
+Route::get('/projects', function () {
+    return view('projects');
+});
+
+Route::get('/service', function () {
+    return view('service');
+});
+
+Route::get('/team', function () {
+    return view('team');
+});
+
+Route::get('/single', function () {
+    return view('single');
+});
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
